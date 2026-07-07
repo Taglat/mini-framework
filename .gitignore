@@ -1,0 +1,26 @@
+# Dependencies (MiniDOM itself has none, but keep these out just in case)
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build / cache output
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local task/audit notes — kept out of version control by request
+task.md
+audit.md
