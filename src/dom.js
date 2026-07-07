@@ -178,8 +178,10 @@ function patchChildren(parentEl, oldChildren, newChildren, events) {
       node = createNode(newChild, events);
     }
 
-    // Position the node so children end up in new-array order.
-    if (node.nextSibling !== referenceNode) {
+    // Position the node so children end up in new-array order. Only touch the
+    // DOM when the node is not already sitting in the right place (which is
+    // always true for a freshly created node, whose parentNode is still null).
+    if (!(node.parentNode === parentEl && node.nextSibling === referenceNode)) {
       parentEl.insertBefore(node, referenceNode);
     }
     referenceNode = node;
